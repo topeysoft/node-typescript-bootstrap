@@ -1,11 +1,8 @@
 {
   "name": "node-starter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "lint": "tslint \"src/**/*.ts\"",
-  "bin": {
-    "node-starter": "www.js"
-  },
   "dependencies": {
     "@types/express": "^4.0.35",
     "body-parser": "^1.17.1",
@@ -52,7 +49,7 @@
     "deploy": "npm version patch --force &&  npm run git-publish && npm publish --access=public",
     "git-add": "git add -A .",
     "git-commit": "git commit -a -m \"code update\"",
-    "git-push": "git push origin master --force",
+    "git-push": "git push origin master --force  && git checkout master",
     "git-publish": "npm run git-commit && npm run git-push"
   },
   "author": "",
