@@ -1,6 +1,6 @@
 {
   "name": "@topeysoft/node-starter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "lint": "tslint \"src/**/*.ts\"",
   "dependencies": {
