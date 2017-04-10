@@ -1,20 +1,20 @@
 "use strict";
-var BaseRoute = (function () {
-    function BaseRoute() {
+Object.defineProperty(exports, "__esModule", { value: true });
+class BaseRoute {
+    constructor() {
         this.title = "Tour of Heros";
         this.scripts = [];
     }
-    BaseRoute.prototype.addScript = function (src) {
+    addScript(src) {
         this.scripts.push(src);
         return this;
-    };
-    BaseRoute.prototype.render = function (req, res, view, options) {
+    }
+    render(req, res, view, options) {
         res.locals.BASE_URL = "/";
         res.locals.scripts = this.scripts;
         res.locals.title = this.title;
         res.render(view, options);
-    };
-    return BaseRoute;
-}());
+    }
+}
 exports.BaseRoute = BaseRoute;
 //# sourceMappingURL=base-route.js.map

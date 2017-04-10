@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.DevConfig = {
     cors: {
         allowed_origins: ['localhost:8100', 'localhost:4200'],

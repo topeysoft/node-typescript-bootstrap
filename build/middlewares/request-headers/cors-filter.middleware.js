@@ -1,6 +1,7 @@
 "use strict";
-var CorsFilterMiddleware = (function () {
-    function CorsFilterMiddleware(app) {
+Object.defineProperty(exports, "__esModule", { value: true });
+class CorsFilterMiddleware {
+    constructor(app) {
         this.app = app;
         this.app.use(function (req, res, next) {
             res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
@@ -10,7 +11,6 @@ var CorsFilterMiddleware = (function () {
             next();
         });
     }
-    return CorsFilterMiddleware;
-}());
+}
 exports.CorsFilterMiddleware = CorsFilterMiddleware;
 //# sourceMappingURL=cors-filter.middleware.js.map

@@ -3,3 +3,5 @@
 --watch-extensions tsx,ts 
 ./src/**/*.spec.tsx
 ./src/**/*.spec.ts
+./tests/**/*spec.ts
+./tests/**/*test.ts
