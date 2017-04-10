@@ -6,4 +6,4 @@ export const DevConfig:any={
         , allow_credentials:'false'
 
     }
-} 
+}  
