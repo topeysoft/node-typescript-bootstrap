@@ -5,7 +5,13 @@ var server = require("../build/server");
 var debug = require("debug")("express:server");
 var http = require("http");
 
-var httpPort = normalizePort(process.env.PORT || 8080);
+
+var portArg = process.argv.find(function(arg) {
+  return arg.match(/(--port|-p)(=)\d+/g);
+})||'';
+var port=portArg.match(/\d+/g)||[8080];
+var httpPort = normalizePort(port[0]);
+
 var app = server.Server.bootstrap().app;
 app.set("port", httpPort);
 var httpServer = http.createServer(app);
