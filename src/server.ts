@@ -6,10 +6,12 @@ import * as path from "path";
 import errorHandler = require("errorhandler");
 import methodOverride = require("method-override");
 import { IndexRoute } from "./routes/mvc-routes/index-route";
+import { CorsFilterMiddleware } from './middlewares/request-headers/cors-filter.middleware';
+import { Router, Express } from 'express';
 
 export class Server {
 
-    public app: express.Application;
+    public app: Express;
 
     public static bootstrap(): Server {
         return new Server();
@@ -19,12 +21,14 @@ export class Server {
         this.app = express();
 
         this.config();
-
+        this.setupHeaders();
         this.routes();
-
         this.api();
     }
 
+    public setupHeaders() {
+        new CorsFilterMiddleware(this.app);
+    }
     public api() {
     }
 
@@ -34,7 +38,7 @@ export class Server {
 
    
     public routes() {
-        let router: express.Router;
+        let router: Router;
         router = express.Router();
         IndexRoute.create(router);
         this.app.use(router);

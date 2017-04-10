@@ -1,35 +1,25 @@
 #!/usr/bin/env node
 "use strict";
 
-//module dependencies
 var server = require("../dist/server");
 var debug = require("debug")("express:server");
 var http = require("http");
 
-//create http server
 var httpPort = normalizePort(process.env.PORT || 8080);
 var app = server.Server.bootstrap().app;
 app.set("port", httpPort);
 var httpServer = http.createServer(app);
 
-//listen on provided ports
 httpServer.listen(httpPort);
 
-//add error handler
 httpServer.on("error", onError);
 
-//start listening on port
 httpServer.on("listening", onListening);
 
-
-/**
- * Normalize a port into a number, string, or false.
- */
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
-    // named pipe
     return val;
   }
 
@@ -41,9 +31,6 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
 function onError(error) {
   if (error.syscall !== "listen") {
     throw error;
@@ -53,7 +40,6 @@ function onError(error) {
     ? "Pipe " + port
     : "Port " + port;
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case "EACCES":
       console.error(bind + " requires elevated privileges");
@@ -67,10 +53,6 @@ function onError(error) {
       throw error;
   }
 }
-
-/**
- * Event listener for HTTP server "listening" event.
- */
 function onListening() {
   var addr = httpServer.address();
   var bind = typeof addr === "string"
@@ -78,4 +60,3 @@ function onListening() {
     : "port " + addr.port;
   debug("Listening on " + bind);
 }
-This is a bit long. So let me break 
