@@ -1,6 +1,6 @@
 {
   "name": "@topeysoft/node-starter",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "lint": "tslint \"src/**/*.ts\"",
   "dependencies": {
@@ -65,7 +65,7 @@
     "grunt": "grunt",
     "grunt:s": "grunt serve",
     "grunt:w": "grunt watch",
-    "start": "node ./bin/www --host localhost --port 9100",
+    "start": "node ./bin/www --host=localhost --port=5200",
     "test": "mocha --opts mocha.opts && rm -rf test",
     "test:auto": "mocha --opts mocha.opts --watch",
     "build": "tsc",
