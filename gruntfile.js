@@ -58,7 +58,7 @@ module.exports = function (grunt) {
   ]);
   grunt.registerTask("ts-w", [
     "copy",
-    "ts",
+    "ts", 
     "watch"
   ]);
 
