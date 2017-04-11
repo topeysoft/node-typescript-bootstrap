@@ -1,6 +1,6 @@
 {
   "name": "@topeysoft/node-starter",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "",
   "lint": "tslint \"src/**/*.ts\"",
   "dependencies": {
@@ -73,7 +73,7 @@
     "deploy": "npm version patch --force &&  npm run git-publish && npm publish --access=public",
     "git-add": "git add -A .",
     "git-commit": "npm run git-add && git commit -m \"code update\"",
-    "git-push": "git push origin master --force  && git checkout master",
+    "git-push": "git push origin test --force  && git checkout master",
     "git-publish": "npm run git-commit && npm run git-push"
   },
   "author": "",
